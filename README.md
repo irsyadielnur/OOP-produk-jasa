@@ -12,11 +12,15 @@ Program website sederhana CRUD produk dan jasa, menggunakan JavaScript dan local
 1. Clone repository ini:  
    `git clone https://github.com/username/nama-repo.git`
 
-2. Buka file `index.html` di browser favorit kamu.
-
-3. Gunakan form untuk menambah, dan edit produk/jasa.
+   atau download zip
    
-4. ada tombol untuk pilihan edit, dan hapus
+2. buka terminal dan jalankan `npm install`
+
+3. Buka file `index.html` di browser favorit kamu.
+
+4. Gunakan form untuk menambah, dan edit produk/jasa.
+   
+5. ada tombol untuk pilihan edit, dan hapus
 
 ## Struktur Kode
 
