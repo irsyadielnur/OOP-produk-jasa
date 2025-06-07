@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Data Produk / Jasa</h1>
+    </header>
+
+    <main>
+      <!-- Form input data produk/jasa -->
+      <form id="form-produk">
+        <h2>Tambah Produk/Jasa:</h2>
+
+        <!-- memilih jenis produk/jasa -->
+        <label for="tipe-produk">Tipe: </label>
+        <select id="tipe-produk">
+          <option value="produk">Produk</option>
+          <option value="jasa">Jasa</option>
+        </select>
+
+        <!-- input nama produk/jasa -->
+        <label for="nama-produk">Nama Produk: </label>
+        <input type="text" id="nama-produk" name="nama-produk" />
+
+        <!-- input deskripsi produk/jasa -->
+        <label for="desc-produk">Deskripsi Produk: </label>
+        <textarea rows="3" id="desc-produk" name="desc-produk"></textarea>
+
+        <!-- input harga produk/jasa -->
+        <label for="hrg-produk">Harga: </label>
+        <input type="number" id="hrg-produk" name="hrg-produk" />
+
+        <!-- input durasi jasa -->
+        <label for="durasi-jasa" style="display: none">Durasi Jasa (Hari): </label>
+        <input type="number" id="durasi-jasa" style="display: none" />
+
+        <!-- input gambar produk -->
+        <label for="gbr-produk">Gambar Produk: </label>
+        <input type="file" id="gbr-produk" name="gbr-produk" accept="image/*" />
+
+        <!-- tombol submit -->
+        <button type="submit" id="submit">Submit</button>
+      </form>
+
+      <!-- tampilan data produk/jasa kedalam table-->
+      <section class="tampilan-produk">
+        <h2>Semua Produk / Jasa</h2>
+        <table class="semua-produk" id="table-produk">
+          <thead>
+            <tr role="row">
+              <th>Gambar</th>
+              <th>Nama</th>
+              <th>Deskripsi</th>
+              <th>Harga</th>
+              <th>Tindakan</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <h5>Irsyadi Hanif Elnur</h5>
+    </footer>
+
+    <script>
+      // menampilan input gambar untuk produk dan input durasi untuk jasa
+      document.getElementById('tipe-produk').addEventListener('change', function () {
+        const tipe = this.value;
+        document.getElementById('durasi-jasa').style.display = tipe === 'jasa' ? 'block' : 'none';
+        document.querySelector("label[for='durasi-jasa']").style.display = tipe === 'jasa' ? 'block' : 'none';
+        document.getElementById('gbr-produk').style.display = tipe === 'produk' ? 'block' : 'none';
+        document.querySelector("label[for='gbr-produk']").style.display = tipe === 'produk' ? 'block' : 'none';
+      });
+    </script>
+
+    <!-- script sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- script main.js -->
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
